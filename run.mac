@@ -1,0 +1,27 @@
+/run/initialize
+
+/control/verbose 0
+/run/verbose 0 
+/event/verbose 0
+/tracking/verbose 0
+
+# /MDT/event/setScinThreshold 20.0 MeV
+# /MDT/event/setTubeThreshold 20.0 MeV
+
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/rot1 0 1 0 
+/gps/pos/rot2 1 0 0 
+/gps/pos/centre 0 0 120 cm
+/gps/pos/halfx 50 cm
+/gps/pos/halfy 50 cm
+
+/gps/particle mu-
+/gps/ene/type User
+/gps/ang/type user
+/gps/hist/type theta
+/control/execute theta.mac
+/gps/hist/type energy
+/control/execute energy.mac
+
+/run/beamOn 1000000
